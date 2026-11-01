@@ -13,7 +13,7 @@
 ## Деплой на Deno Deploy
 1. Зайди на https://console.deno.com, войди через GitHub и создай проект.
 2. Выбери «Git repository», репозиторий `Sp1KLe/bearite-site`.
-3. Entrypoint: `deno/main.ts`.
+3. Entrypoint: `main.ts` (лежит в корне; если поля нет, ничего не вписывай, Deno найдёт файл сам).
 4. В настройках проекта добавь переменную окружения `JWT_SECRET`: случайная строка не короче 32 символов.
 5. Открой `https://<твой-проект>.deno.dev/health`. Должно вернуться `{"ok":true}`.
 
