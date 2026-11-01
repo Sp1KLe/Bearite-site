@@ -1,0 +1,525 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Скачать Bearite</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600&display=swap">
+<style>
+/* Палитра из значка и лаунчера: тёмный шоколад, карамель, сливочный кремовый. */
+/* Одна тёмная тема, как в самом приложении. */
+:root {
+  color-scheme: dark;
+  --bg: #15100D;
+  --panel: #201611;
+  --panel-2: #2A1F18;
+  --line: #3A2C23;
+  --line-2: #2A2019;
+  --cream: #F4E3CB;
+  --muted: #BBA28B;
+  --tan: #CC9A70;
+  --tan-hi: #E2B48A;
+  --ink: #1A110C;
+  --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+  --body: "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 20px;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 480px at 85% -10%, rgba(204, 154, 112, 0.14), transparent 60%),
+    var(--bg);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: var(--tan-hi); text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+/* Шапка */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px;
+}
+.brand { display: flex; align-items: center; gap: 12px; color: var(--cream); text-decoration: none; }
+.brand img { width: 38px; height: 38px; display: block; }
+.brand-name { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.01em; }
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 4px;
+  white-space: nowrap;
+}
+.nav-link:hover { color: var(--cream); }
+
+/* Главный экран */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 56px;
+  align-items: center;
+  padding-block: 56px 72px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+.chip i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tan);
+  display: inline-block;
+}
+h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(34px, 6.4vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 22px;
+  text-wrap: balance;
+}
+h1 em {
+  font-style: normal;
+  color: var(--tan-hi);
+}
+.lead {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0 0 36px;
+  max-width: 44ch;
+  text-wrap: pretty;
+}
+.cta { display: grid; gap: 14px; justify-items: start; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+.btn-primary { background: var(--tan); color: var(--ink); }
+.btn-primary:hover { background: var(--tan-hi); }
+.btn-primary:active { transform: translateY(1px); }
+.btn-ghost { color: var(--cream); border: 1px solid var(--line); background: transparent; }
+.btn-ghost:hover { border-color: var(--tan); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.cta-meta { font-size: 14px; color: var(--muted); margin: 0; }
+
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+.hero-art .disc {
+  position: absolute;
+  width: min(100%, 400px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed var(--line);
+}
+.hero-art img {
+  position: relative;
+  width: min(100%, 320px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
+}
+
+/* Предупреждение про сохранение */
+.warn {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 24px 0;
+  border-block: 1px solid var(--line);
+}
+.warn-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--panel-2);
+  color: var(--tan-hi);
+}
+.warn-icon svg { width: 22px; height: 22px; }
+.warn h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.warn p { margin: 0; color: var(--muted); max-width: 70ch; }
+
+/* Разделы */
+section { padding-block: 84px 0; }
+.sec-head { display: grid; gap: 10px; margin-bottom: 40px; max-width: 58ch; }
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tan-hi);
+  margin: 0;
+}
+.sec-head h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(24px, 3.6vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+.sec-head p { margin: 0; color: var(--muted); }
+
+/* Возможности */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.feature {
+  background: var(--panel);
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  padding: 28px;
+  min-width: 0;
+}
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--panel-2);
+  color: var(--tan-hi);
+  margin-bottom: 22px;
+}
+.feature-icon svg { width: 24px; height: 24px; }
+.feature h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 17px;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.feature p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Установка: горизонтальная шкала на широком экране */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0;
+  counter-reset: step;
+  position: relative;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 28px 24px 0 0;
+  min-width: 0;
+}
+.steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--tan);
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.steps li::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 52px;
+  right: 8px;
+  height: 1px;
+  background: var(--line);
+}
+.steps li:last-child::after { display: none; }
+.steps h3 { font-size: 17px; font-weight: 600; margin: 0 0 6px; }
+.steps p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Вопросы */
+.faq { display: grid; gap: 10px; max-width: 760px; }
+.faq details {
+  background: var(--panel);
+  border: 1px solid var(--line-2);
+  border-radius: 14px;
+  padding: 0 22px;
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--tan-hi);
+  border-bottom: 2px solid var(--tan-hi);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 180ms ease;
+}
+.faq details[open] summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.faq details p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 62ch;
+}
+
+/* Призыв и ссылка на репозиторий */
+.closing {
+  margin-top: 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 40px;
+}
+.closing h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+.closing p { margin: 0; color: var(--muted); max-width: 52ch; }
+.closing .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+footer {
+  margin-top: 56px;
+  padding-block: 28px 40px;
+  border-top: 1px solid var(--line-2);
+  color: var(--muted);
+  font-size: 14px;
+  display: grid;
+  gap: 6px;
+}
+footer p { margin: 0; max-width: 72ch; }
+
+/* Телефон */
+@media (max-width: 760px) {
+  .topbar { padding-block: 16px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; padding-block: 24px 48px; text-align: left; }
+  .hero-art { order: -1; }
+  .hero-art img { width: min(100%, 210px); }
+  .hero-art .disc { width: min(100%, 250px); }
+  .hero-art { min-height: 0; }
+  .lead { font-size: 17px; }
+  .cta { width: 100%; }
+  .btn { width: 100%; }
+  section { padding-block: 64px 0; }
+  .sec-head { margin-bottom: 28px; }
+  .steps { grid-template-columns: 1fr; gap: 0; }
+  .steps li { padding: 0 0 28px 0; display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 16px; align-items: start; }
+  .steps li::before { margin-bottom: 0; grid-row: span 2; }
+  .steps li::after {
+    top: 48px;
+    bottom: 0;
+    left: 19px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps li:last-child::after { display: none; }
+  .closing { grid-template-columns: 1fr; padding: 28px; margin-top: 72px; }
+  .closing .btns, .closing .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .faq summary::after { transition: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img src="bear.png" alt="" width="38" height="38">
+      <span class="brand-name">Bearite</span>
+    </a>
+    <a class="nav-link" href="https://github.com/Sp1KLe/Bearite" target="_blank" rel="noopener">Репозиторий на GitHub</a>
+  </header>
+
+  <div class="hero" id="top">
+    <div>
+      <p class="chip"><i></i>Для Android · процессор arm64</p>
+      <h1>Моды для <em>Super Bear Adventure</em></h1>
+      <p class="lead">Лаунчер запускает игру с модами, своими картами и мини-играми. Оригинальная игра не меняется: она остаётся установленной из Google Play.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/Sp1KLe/Bearite/releases/download/latest/Bearite-debug.apk" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+          Скачать лаунчер
+        </a>
+        <p class="cta-meta">Файл Bearite-debug.apk · обновляется при каждой сборке</p>
+      </div>
+    </div>
+    <div class="hero-art">
+      <span class="disc" aria-hidden="true"></span>
+      <img src="bear.png" alt="Значок Bearite: медвежья голова на светлом фоне с коричневыми кругами" width="320" height="320">
+    </div>
+  </div>
+
+  <div class="warn" role="note">
+    <span class="warn-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L2.4 17.5A2 2 0 0 0 4.1 20.5h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+    </span>
+    <div>
+      <h2>Сначала сохрани прогресс</h2>
+      <p>Если у тебя есть важное сохранение в файле .sba, достань его из игры и положи в надёжное место: на компьютер или в облако. Только потом скачивай лаунчер и загружай сохранение кнопкой на главной странице.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Возможности</p>
+      <h2>Всё, что нужно для игры с модами</h2>
+    </div>
+    <ul class="features">
+      <li class="feature">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+        </div>
+        <h3>Каталог модов</h3>
+        <p>Вкладка «Все моды» в меню на паузе. Мод ставится одним нажатием, а выключенные видны полупрозрачными.</p>
+      </li>
+      <li class="feature">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l-5 2v14l5-2 6 2 5-2V4l-5 2-6-2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg>
+        </div>
+        <h3>Карты и мини-игры</h3>
+        <p>Свои карты, паркур-гонка, царь горы и догонялки. Ник для мультиплеера задаётся на главной странице.</p>
+      </li>
+      <li class="feature">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M12 11v5"/><path d="M9.5 13.5L12 16l2.5-2.5"/></svg>
+        </div>
+        <h3>Сохранения .sba</h3>
+        <p>Загрузи своё сохранение кнопкой на главной странице. Файл копируется как есть, с тем же именем и расширением.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Установка</p>
+      <h2>Четыре шага до игры с модами</h2>
+      <p>Выполняй по порядку.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Установи игру</h3>
+        <p>Super Bear Adventure из Google Play. Проверено на версии 13.0.8.</p>
+      </li>
+      <li>
+        <h3>Поставь лаунчер</h3>
+        <p>Скачай APK и открой его. Android попросит разрешить установку из этого источника.</p>
+      </li>
+      <li>
+        <h3>Проверь вкладку «Игра»</h3>
+        <p>Должна быть надпись «Super Bear Adventure найдена». Затем нажимай «Играть».</p>
+      </li>
+      <li>
+        <h3>Поставь моды</h3>
+        <p>На паузе нажми «Меню», открой «Все моды» и выбери мод.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Вопросы</p>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Что нужно, чтобы запустить?</summary>
+        <p>Android-телефон с процессором arm64-v8a, установленная игра Super Bear Adventure из Google Play и интернет для каталога модов и мини-игр.</p>
+      </details>
+      <details>
+        <summary>Где лежит сохранение .sba?</summary>
+        <p>Лаунчер копирует сохранение в папку Android/data/com.bearite.patcher/files, сохраняя имя и расширение. Переименовывать файл не нужно.</p>
+      </details>
+      <details>
+        <summary>Мод установлен, но не работает</summary>
+        <p>Проверь, что он включён во вкладке «Установлено». Моды с нативным кодом включаются только после подтверждения предупреждения. Причина ошибки видна на вкладке «Лог».</p>
+      </details>
+      <details>
+        <summary>Это официальное приложение?</summary>
+        <p>Нет, это неофициальный проект. Super Bear Adventure принадлежит её разработчикам, а в Bearite нет их кода: игра запускается из её установленной копии.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="closing">
+    <div>
+      <h2>Открой исходный код и инструкцию по модам</h2>
+      <p>Лаунчер, SDK и пошаговое создание модов через GitHub Actions. Компьютер для этого не нужен.</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-ghost" href="https://github.com/Sp1KLe/Bearite" target="_blank" rel="noopener">Открыть репозиторий</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Bearite — неофициальный проект. Super Bear Adventure принадлежит её разработчикам.</p>
+  </footer>
+</div>
